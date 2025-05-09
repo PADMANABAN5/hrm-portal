@@ -29,7 +29,7 @@ function Sidebar() {
       style={{ width: isCollapsed ? '80px' : '280px', height: '96vh', transition: 'width 0.3s ease' }}
     >
       {/* Toggle Button */}
-      <div className="mb-3 d-flex justify-content-end">
+      <div className="mb-3 d-none d-md-flex justify-content-end">
         {isCollapsed ? (
           <FaBars onClick={toggleSidebar} style={{ cursor: 'pointer', fontSize: '20px' }} />
         ) : (
