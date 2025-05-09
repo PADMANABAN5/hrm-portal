@@ -185,5 +185,12 @@
   .container.collapsed > .d-flex.align-items-center.link-dark.text-decoration-none svg {
      margin-right: 0 !important; 
   }
-  
+@media (max-width: 768px) {
+  .sidebar {
+    width: 280px !important;
+    transition: left 0.3s ease;
+  }
+}
+
+
   
