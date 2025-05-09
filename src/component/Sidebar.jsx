@@ -17,9 +17,11 @@ function Sidebar() {
   const location = useLocation(); 
 
   const toggleSidebar = (e) => {
-    e.stopPropagation();
+  e.stopPropagation();
+  if (window.innerWidth >= 768) { 
     setIsCollapsed(!isCollapsed);
-  };
+  }
+};
 
   return (
     <div
