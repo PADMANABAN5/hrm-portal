@@ -14,7 +14,7 @@ import {
 
 function Sidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const location = useLocation();
 
@@ -51,17 +51,14 @@ function Sidebar() {
 
   return (
     <>
-      {/* Mobile Hamburger */}
       {isMobile && (
         <div className="position-fixed top-0 start-0 p-3" style={{ zIndex: 1050 }}>
           <FaBars
             onClick={toggleMobileSidebar}
-            style={{ fontSize: '24px', cursor: 'pointer' }}
+            style={{ fontSize: '27px', cursor: 'pointer', backgroundColor: 'white', borderRadius: '50%', padding: '5px', marginBottom: '10px' }}
           />
         </div>
       )}
-
-      {/* Overlay */}
       {isMobile && isMobileOpen && (
         <div
           onClick={closeMobileSidebar}
@@ -73,11 +70,10 @@ function Sidebar() {
             height: '100vh',
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             zIndex: 1040,
+           
           }}
         />
       )}
-
-      {/* Sidebar */}
       <div
         className={`container d-flex flex-column flex-shrink-0 p-3 bg-light border-end ${isCollapsed ? 'collapsed' : ''}`}
         style={{
@@ -90,7 +86,7 @@ function Sidebar() {
           zIndex: 1051
         }}
       >
-        {/* Desktop Collapse Toggle */}
+   
         <div className="mb-3 d-none d-md-flex justify-content-end">
           {isCollapsed ? (
             <FaBars onClick={toggleSidebar} style={{ cursor: 'pointer', fontSize: '20px' }} />
@@ -99,7 +95,6 @@ function Sidebar() {
           )}
         </div>
 
-        {/* User Profile */}
         <div className="dropdown mb-3">
           <a
             href="#"
